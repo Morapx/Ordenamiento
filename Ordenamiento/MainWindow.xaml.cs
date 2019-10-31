@@ -52,7 +52,7 @@ namespace Ordenamiento
             {
                 for(i=0; i<miLlista.Count; i++)
                 {
-                    if(miLlista[i] > miLlista[gap + i])
+                    if(gap + i < miLlista.Count && miLlista[i] > miLlista[gap + i])
                     {
                         temp = miLlista[i];
                         miLlista[i] = miLlista[gap + i];
