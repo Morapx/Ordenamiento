@@ -62,5 +62,28 @@ namespace Ordenamiento
                 gap--;
             }
         }
+
+        private void BotonBubble_Click(object sender, RoutedEventArgs e)
+        {
+           
+            bool intercambio = false;
+            do
+            {
+                for(int i=0; i < miLlista.Count-1; i++)
+                {
+                    if (miLlista[i] > miLlista[i + 1])
+                    {
+                        int temp = miLlista[i];
+                        miLlista[1] = miLlista[i + 1];
+                        miLlista[i + 1] = temp;
+                        intercambio = true;
+                    }
+                   
+                }
+
+            } while (intercambio);
+
+
+        }
     }
 }
