@@ -22,6 +22,7 @@ namespace Ordenamiento
     public partial class MainWindow : Window
     {
         ObservableCollection<int> miLlista = new ObservableCollection<int>();
+        ObservableCollection<Alumno> alumnos = new ObservableCollection<Alumno>();
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +35,14 @@ namespace Ordenamiento
             miLlista.Add(62);
             miLlista.Add(420);
 
+            alumnos.Add(new Alumno("Jose", 9.1f, 2));
+            alumnos.Add(new Alumno("Maria", 9.8f, 0));
+            alumnos.Add(new Alumno("Pedro", 6.4f, 14));
+            alumnos.Add(new Alumno("Ana", 8.5f, 4));
+            alumnos.Add(new Alumno("Juan", 9.5f, 1));
+
+            ListaNumeros.ItemsSource = alumnos;
+
             ListaNumeros.ItemsSource = miLlista;
             
         }
@@ -45,18 +54,19 @@ namespace Ordenamiento
             miLlista[0] = miLlista[3]; //Eelemento 0 es igual al elemento 3
             miLlista[3] = temp; */
 
-            int gap, temp, i, j;
-            gap = miLlista.Count / 2;
+            int gap, i, j;
+            gap = alumnos.Count / 2;
 
             while(gap > 0)
             {
                 for(i=0; i<miLlista.Count; i++)
                 {
-                    if(gap + i < miLlista.Count && miLlista[i] > miLlista[gap + i])
+                    if(gap + i < alumnos.Count && alumnos[i].promedio > alumnos[gap + i].promedio)
                     {
-                        temp = miLlista[i];
-                        miLlista[i] = miLlista[gap + i];
-                        miLlista[gap + i] = temp;
+                        var temp = alumnos[i];
+                      
+                        alumnos[i] = alumnos[gap + i];
+                        alumnos[gap + i] = temp;
                     }
                 }
                 gap--;
@@ -83,7 +93,7 @@ namespace Ordenamiento
 
             } while (intercambio);
 
-
+            
         }
     }
 }
