@@ -8,21 +8,23 @@ namespace Ordenamiento
 {
     class Alumno
     {
-        public string nombre { get; set; }
-        public float promedio { get; set; }
-        public int faltas { get; set; }
+        public string Nombre { get; set; }
+        public float Promedio { get; set; }
+        public int Faltas { get; set; }
 
-        public Alumno(string Nombre, float Promedio, int Faltas)
+        public Alumno(string nombre, float promedio, int faltas)
         {
-            this.nombre = Nombre;
-            this.promedio = Promedio;
-            this.faltas = Faltas;
+            this.Nombre = nombre;
+            this.Promedio = promedio;
+            this.Faltas = faltas;
+
         }
+
 
         public override string ToString()
         {
-            return this.nombre + "(" + this.promedio.ToString() + ")";
+            return this.Nombre + "" + "(" + this.Promedio.ToString() + ")";
         }
-
     }
 }
+

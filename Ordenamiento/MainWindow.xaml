@@ -7,9 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="ListaNumeros" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="150"/>
-        <Button x:Name="BotonOrdenar" Content="Ordenar Shell" HorizontalAlignment="Left" Margin="185,25,0,0" VerticalAlignment="Top" Width="121" Click="BotonOrdenar_Click"/>
-        <Button x:Name="BotonBubble" Content="Ordenar Bubble" HorizontalAlignment="Left" Margin="185,64,0,0" VerticalAlignment="Top" Width="121" Click="BotonBubble_Click"/>
+        <Button x:Name="BotonOrdenar" Content="Ordenar Shell" HorizontalAlignment="Left" Margin="637,49,0,0" VerticalAlignment="Top" Width="121" Click="BotonOrdenar_Click"/>
+        <Button x:Name="BotonBubble" Content="Ordenar Bubble" HorizontalAlignment="Left" Margin="637,96,0,0" VerticalAlignment="Top" Width="121" Click="BotonBubble_Click"/>
+        <Button x:Name="BotonOrdenarFaltas" Content="Ordenar Shell" HorizontalAlignment="Left" Margin="637,188,0,0" VerticalAlignment="Top" Width="121"/>
+        <Button x:Name="BotonBubbleFaltas" Content="Ordenar Bubble" HorizontalAlignment="Left" Margin="637,236,0,0" VerticalAlignment="Top" Width="121"/>
+        <ListView x:Name="ListaNumeros" HorizontalAlignment="Left" Height="399" Margin="233,10,0,0" VerticalAlignment="Top" Width="300">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nombre}" Header="Nombre"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Promedio}" Header="Promedio"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Faltas}" Header="Faltas"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="BotonShellmas" Content="+/-" HorizontalAlignment="Left" Margin="552,143,0,0" VerticalAlignment="Top" Width="98"/>
 
     </Grid>
 </Window>
